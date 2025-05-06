@@ -1,0 +1,56 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+  - file: chapters/probex/probex  # This is the landing/home page
+    sections:
+      - file: chapters/probex/p1
+      - file: chapters/probex/p2
+      - file: chapters/probex/p3
+      - file: chapters/probex/p4
+      - file: chapters/probex/p5
+      - file: chapters/probex/p6
+      - file: chapters/probex/p7
+      - file: chapters/probex/p8
+      - file: chapters/probex/p9
+      - file: chapters/probex/p10
+      - file: chapters/probex/p11
+      - file: chapters/probex/p12
+      - file: chapters/probex/p13
+      - file: chapters/probex/p14
+      - file: chapters/probex/p15
+      - file: chapters/probex/p16
+      - file: chapters/probex/p17
+      - file: chapters/probex/p18
+      - file: chapters/probex/p19
+      - file: chapters/probex/p20
+      - file: chapters/probex/p21
+      - file: chapters/probex/p22
+      - file: chapters/probex/p23
+      - file: chapters/probex/p24
+      - file: chapters/probex/p25
+      - file: chapters/probex/p26
+      - file: chapters/probex/p27
+      - file: chapters/probex/p28
+      - file: chapters/probex/p29
+      - file: chapters/probex/p30
+      - file: chapters/probex/p31
+      - file: chapters/probex/p32
+      - file: chapters/probex/p33
+      - file: chapters/probex/p34
+      - file: chapters/probex/p35
+      - file: chapters/probex/p36
+      - file: chapters/probex/p37
+      - file: chapters/probex/p38
+  - file: chapters/markov
+  - file: chapters/strategy
+  - file: chapters/brainteasers
+  - file: chapters/stats
+  - file: chapters/calclinalg
+  - file: chapters/algo
+  - file: chapters/mm
+  - file: chapters/fermi
+  - file: chapters/sequences
+  - file: chapters/company
