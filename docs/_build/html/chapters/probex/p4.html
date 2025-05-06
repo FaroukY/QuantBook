@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Problem 4: Hat Party &#8212; Quant Interview Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/probex/p4';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Problem 5: One Too Many" href="p5.html" />
+    <link rel="prev" title="Problem 3: Stairway to Random" href="p3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Quant Interview Handbook - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Quant Interview Handbook - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Quant Interview Handbook
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="probex.html">Probability and Expected Value</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="p1.html">Problem 1: Roller Coaster Ride</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p2.html">Problem 2: Face Value Multiplicity Product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p3.html">Problem 3: Stairway to Random</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem 4: Hat Party</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p5.html">Problem 5: One Too Many</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p6.html">Problem 6: Rigged Roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p7.html">Problem 7: The Backstep Bunny</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p8.html">Problem 8: Card Sandwich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p9.html">Problem 9: Spaghetti Topology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p10.html">Problem 10: Practice Makes Probability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p11.html">Problem 11: Gambler’s Ruin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p12.html">Problem 12: Chop, Chop, Triangle?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p13.html">Problem 13: Tight Fit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p14.html">Problem 14: All In (or Not)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p15.html">Problem 15: The Shrinking Product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p16.html">Problem 16: Coin Toss Monotony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p17.html">Problem 17: Streak Freak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p18.html">Problem 18: No Change, No Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p19.html">Problem 19: Arc Nemesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p20.html">Problem 20: Hedge Me Baby One More Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p21.html">Problem 21: Déjà Roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p22.html">Problem 22: Rollin’ Uphill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p23.html">Problem 23: Gotta Catch ’Em All</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p24.html">Problem 24: Chasing 65</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p25.html">Problem 25: Roll to Completion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p26.html">Problem 26: The Variety Roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p27.html">Problem 27: High Roller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p28.html">Problem 28: Runaway Sixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p29.html">Problem 29: Never Back Down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p30.html">Problem 30: Dice Dropout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p31.html">Problem 31: One Equals Two</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p32.html">Problem 32: Summing the Climb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p33.html">Problem 33: Will We Get There?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p34.html">Problem 34: One Roll, Two Rolls, Tomato, Tomahto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p35.html">Problem 35: Sum Doppelgangers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p36.html">Problem 36: Uniform from Chaos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p37.html">Problem 37: Matching Madness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p38.html">Problem 38: The Two-Win Rule</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../markov.html">Markov Chains and Random Walks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../strategy.html">Strategy Games and Puzzles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brainteasers.html">Brain Teasers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stats.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../calclinalg.html">Calculus and Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algo.html">Algorithms and Numerical Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mm.html">Market Making Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fermi.html">Fermi Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sequences.html">Sequence Completion Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../company.html">Company Specific Questions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/FaroukY/QuantBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FaroukY/QuantBook/issues/new?title=Issue%20on%20page%20%2Fchapters/probex/p4.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/probex/p4.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Problem 4: Hat Party</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-4-hat-party">
+<h1>Problem 4: Hat Party<a class="headerlink" href="#problem-4-hat-party" title="Link to this heading">#</a></h1>
+<p>Suppose <span class="math notranslate nohighlight">\(n\)</span> men at a party throw their hats in the center of the room. Each man then randomly selects a hat. Let <span class="math notranslate nohighlight">\(p_n\)</span> be the probability that none of the <span class="math notranslate nohighlight">\(n\)</span> men selects his own hat. What is <span class="math notranslate nohighlight">\(\lim\limits_{n\to \infty}p_n\)</span>?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Click to show solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Consider <span class="math notranslate nohighlight">\(n\)</span> men labeled <span class="math notranslate nohighlight">\(1,2,\dots,n\)</span> and hats labeled identically. Each man randomly chooses a hat from the center. We want the probability <span class="math notranslate nohighlight">\(p_n\)</span> that no man selects his own hat.</p>
+<hr class="docutils" />
+<h3 class="rubric" id="step-1-formalizing-the-problem">Step 1: Formalizing the Problem</h3>
+<p class="sd-card-text">This is equivalent to counting permutations. Define the set of all permutations of <span class="math notranslate nohighlight">\(\{1,\dots,n\}\)</span> as <span class="math notranslate nohighlight">\(\mathbb{S}_n\)</span>, with <span class="math notranslate nohighlight">\(|\mathbb{S}_n| = n!\)</span>. Define the events:</p>
+<div class="math notranslate nohighlight">
+\[
+E_i = \{\text{the $i$-th person selects his own hat}\}, \quad 1 \leq i \leq n.
+\]</div>
+<p class="sd-card-text">Then the event whose probability we wish to compute is:</p>
+<div class="math notranslate nohighlight">
+\[
+\bigcap_{i=1}^{n}\overline{E_i}.
+\]</div>
+<p class="sd-card-text">Using complementary probability:</p>
+<div class="math notranslate nohighlight">
+\[
+p_n = \Pr\left(\bigcap_{i=1}^{n}\overline{E_i}\right) = 1 - \Pr\left(\bigcup_{i=1}^{n} E_i\right).
+\]</div>
+<hr class="docutils" />
+<h3 class="rubric" id="step-2-inclusionexclusion-principle">Step 2: Inclusion–Exclusion Principle</h3>
+<p class="sd-card-text">Using the Inclusion–Exclusion Principle:</p>
+<div class="math notranslate nohighlight">
+\[
+\Pr\left(\bigcup_{i=1}^{n}E_i\right) = \sum_{1\leq i\leq n}\Pr(E_i) - \sum_{1\leq i&lt;j\leq n}\Pr(E_i\cap E_j) + \cdots + (-1)^{k+1} \sum_{1\leq i_1&lt;\dots&lt;i_k\leq n}\Pr(E_{i_1}\cap\dots\cap E_{i_k}) + \cdots + (-1)^{n+1}\Pr(E_1 \cap \dots E_n)
+\]</div>
+<hr class="docutils" />
+<h3 class="rubric" id="step-3-computing-the-probabilities-of-intersections">Step 3: Computing the Probabilities of Intersections</h3>
+<p class="sd-card-text">Each permutation is equally likely, so each has probability <span class="math notranslate nohighlight">\(1/n!\)</span>.</p>
+<ul>
+<li><p class="sd-card-text">For a single <span class="math notranslate nohighlight">\(i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+  \Pr(E_i) = \frac{(n-1)!}{n!} = \frac{1}{n}.
+  \]</div>
+</li>
+<li><p class="sd-card-text">For distinct <span class="math notranslate nohighlight">\(i,j\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+  \Pr(E_i \cap E_j) = \frac{(n-2)!}{n!} = \frac{1}{n(n-1)}.
+  \]</div>
+</li>
+<li><p class="sd-card-text">More generally, for <span class="math notranslate nohighlight">\(k\)</span> distinct indices:</p>
+<div class="math notranslate nohighlight">
+\[
+  \Pr(E_{i_1}\cap\dots\cap E_{i_k}) = \frac{(n-k)!}{n!}.
+  \]</div>
+</li>
+</ul>
+<p class="sd-card-text">There are <span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> such index sets, so:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{1 \leq i_1 &lt; \dots &lt; i_k \leq n} \Pr(E_{i_1} \cap \dots \cap E_{i_k}) = \binom{n}{k} \cdot \frac{(n-k)!}{n!}.
+\]</div>
+<p class="sd-card-text">Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\Pr\left(\bigcup_{i=1}^{n} E_i \right) = \sum_{k=1}^n (-1)^{k+1} \binom{n}{k} \cdot \frac{(n-k)!}{n!}.
+\]</div>
+<hr class="docutils" />
+<h3 class="rubric" id="step-4-simplifying-the-expression">Step 4: Simplifying the Expression</h3>
+<p class="sd-card-text">Note:</p>
+<div class="math notranslate nohighlight">
+\[
+\binom{n}{k} \cdot \frac{(n-k)!}{n!} = \frac{n!}{k!(n-k)!} \cdot \frac{(n-k)!}{n!} = \frac{1}{k!}.
+\]</div>
+<p class="sd-card-text">Therefore:</p>
+<div class="math notranslate nohighlight">
+\[
+\Pr\left(\bigcup_{i=1}^{n} E_i \right) = \sum_{k=1}^n (-1)^{k+1} \cdot \frac{1}{k!},
+\]</div>
+<p class="sd-card-text">and hence:</p>
+<div class="math notranslate nohighlight">
+\[
+p_n = 1 - \sum_{k=1}^n (-1)^{k+1} \cdot \frac{1}{k!} = \frac{1}{2!} - \frac{1}{3!} + \frac{1}{4!} - \cdots + (-1)^n \cdot \frac{1}{n!}.
+\]</div>
+<hr class="docutils" />
+<h3 class="rubric" id="step-5-taking-the-limit">Step 5: Taking the Limit</h3>
+<p class="sd-card-text">We now compute:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{n \to \infty} p_n = \lim_{n \to \infty} \left( \frac{1}{2!} - \frac{1}{3!} + \frac{1}{4!} - \cdots + (-1)^n \cdot \frac{1}{n!} \right).
+\]</div>
+<p class="sd-card-text">Recall the Taylor series for <span class="math notranslate nohighlight">\(e^{-1}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+e^{-1} = 1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \cdots
+\]</div>
+<p class="sd-card-text">So:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{2!} - \frac{1}{3!} + \cdots = e^{-1} - 1 + \frac{1}{1!} = e^{-1}.
+\]</div>
+<p class="sd-card-text">Hence:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{n \to \infty} p_n = \boxed{e^{-1}}.
+\]</div>
+</div>
+</details></section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/probex"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="p3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Problem 3: Stairway to Random</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="p5.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Problem 5: One Too Many</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Elfarouk Harb
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Elfarouk Harb.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
