@@ -58,6 +58,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/probex/p38';</script>
     <link rel="canonical" href="/QuantBook/chapters/probex/p38.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -442,6 +444,55 @@ document.write(`
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Click to show solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(p_A\)</span> be the probability that Elmer beats Alex, and <span class="math notranslate nohighlight">\(p_R\)</span> the probability they beat Riley.</p>
+<hr class="docutils" />
+<p class="sd-card-text"><strong>Case 1: Elmer plays Alex first (Alex–Riley–Alex)</strong></p>
+<p class="sd-card-text">Elmer wins at least two in a row if one of the following happens:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Win Alex, win Riley, lose Alex: <span class="math notranslate nohighlight">\(p_A \cdot p_R \cdot (1 - p_A)\)</span></p></li>
+<li><p class="sd-card-text">Lose Alex, win Riley, win Alex: <span class="math notranslate nohighlight">\((1 - p_A) \cdot p_R \cdot p_A\)</span></p></li>
+<li><p class="sd-card-text">Win all three: <span class="math notranslate nohighlight">\(p_A \cdot p_R \cdot p_A\)</span></p></li>
+</ul>
+<p class="sd-card-text">So the total probability is:</p>
+<div class="math notranslate nohighlight">
+\[
+p_A p_R (1 - p_A) + (1 - p_A) p_R p_A + p_A p_R p_A = p_A p_R + (1 - p_A) p_R p_A
+\]</div>
+<hr class="docutils" />
+<p class="sd-card-text"><strong>Case 2: Elmer plays Riley first (Riley–Alex–Riley)</strong></p>
+<p class="sd-card-text">Similarly, the success scenarios are:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Win Riley, win Alex, lose Riley: <span class="math notranslate nohighlight">\(p_R \cdot p_A \cdot (1 - p_R)\)</span></p></li>
+<li><p class="sd-card-text">Lose Riley, win Alex, win Riley: <span class="math notranslate nohighlight">\((1 - p_R) \cdot p_A \cdot p_R\)</span></p></li>
+<li><p class="sd-card-text">Win all three: <span class="math notranslate nohighlight">\(p_R \cdot p_A \cdot p_R\)</span></p></li>
+</ul>
+<p class="sd-card-text">So the total probability is:</p>
+<div class="math notranslate nohighlight">
+\[
+p_R p_A (1 - p_R) + (1 - p_R) p_A p_R + p_R p_A p_R = p_A p_R + (1 - p_R) p_A p_R
+\]</div>
+<hr class="docutils" />
+<p class="sd-card-text"><strong>Comparison</strong></p>
+<p class="sd-card-text">We compare:</p>
+<div class="math notranslate nohighlight">
+\[
+p_A p_R + (1 - p_R) p_A p_R \quad \text{vs.} \quad p_A p_R + (1 - p_A) p_R p_A
+\]</div>
+<p class="sd-card-text">These are equal <strong>if and only if</strong> <span class="math notranslate nohighlight">\(p_R = p_A\)</span>, but since Riley is the stronger player, we assume:</p>
+<div class="math notranslate nohighlight">
+\[
+p_R \leq p_A
+\]</div>
+<p class="sd-card-text">Thus,</p>
+<div class="math notranslate nohighlight">
+\[
+(1 - p_R) p_A p_R \geq (1 - p_A) p_R p_A
+\]</div>
+<p class="sd-card-text">and Elmer has a higher chance of winning <strong>if they play Riley first and last</strong>.</p>
+<hr class="docutils" />
+<p class="sd-card-text"><strong>Intuition</strong></p>
+<p class="sd-card-text">It may seem counter-intuitive: wouldn’t you want to face the weaker player (Alex) twice? But notice that in both cases, <strong>Elmer must beat the middle opponent</strong> to have any chance. So placing the <em>weaker</em> opponent in the middle increases the overall chance of chaining two wins.</p>
+<p class="sd-card-text">The best strategy, as always: do the math and trust the algebra.</p>
 </div>
 </details></section>
 

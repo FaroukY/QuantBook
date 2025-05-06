@@ -444,14 +444,16 @@ document.write(`
 <span class="sd-summary-text">Click to show solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Let <span class="math notranslate nohighlight">\(p_n\)</span> be the probability that a run of at least <span class="math notranslate nohighlight">\(r\)</span> consecutive sixes occurs within <span class="math notranslate nohighlight">\(n\)</span> independent rolls of a fair 6-sided die.</p>
 <p class="sd-card-text"><strong>Base cases:</strong><br />
-Clearly, for <span class="math notranslate nohighlight">\(n &lt; r\)</span>, the event is impossible:
-$<span class="math notranslate nohighlight">\(
+Clearly, for <span class="math notranslate nohighlight">\(n &lt; r\)</span>, the event is impossible:</p>
+<div class="math notranslate nohighlight">
+\[
 p_0 = p_1 = \dots = p_{r-1} = 0.
-\)</span>$</p>
-<p class="sd-card-text">When <span class="math notranslate nohighlight">\(n = r\)</span>, the only way to get a run of <span class="math notranslate nohighlight">\(r\)</span> sixes is if <em>all</em> <span class="math notranslate nohighlight">\(r\)</span> rolls are sixes:
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p class="sd-card-text">When <span class="math notranslate nohighlight">\(n = r\)</span>, the only way to get a run of <span class="math notranslate nohighlight">\(r\)</span> sixes is if <em>all</em> <span class="math notranslate nohighlight">\(r\)</span> rolls are sixes:</p>
+<div class="math notranslate nohighlight">
+\[
 p_r = \left( \frac{1}{6} \right)^r.
-\)</span>$</p>
+\]</div>
 <p class="sd-card-text"><strong>Recurrence for <span class="math notranslate nohighlight">\(n \ge r\)</span>:</strong><br />
 There are two disjoint ways that a run of <span class="math notranslate nohighlight">\(r\)</span> sixes can occur in <span class="math notranslate nohighlight">\(n+1\)</span> rolls:</p>
 <ol class="arabic">
@@ -463,16 +465,18 @@ For this to happen:</p>
 <li><p class="sd-card-text">The <span class="math notranslate nohighlight">\((n - r + 1)\)</span>-th roll must <em>not</em> be a six: probability <span class="math notranslate nohighlight">\(5/6\)</span>.</p></li>
 <li><p class="sd-card-text">The next <span class="math notranslate nohighlight">\(r\)</span> rolls must all be sixes: probability <span class="math notranslate nohighlight">\((1/6)^r\)</span>.</p></li>
 </ul>
-<p class="sd-card-text">So this contributes:
-$<span class="math notranslate nohighlight">\(
-(1 - p_{n - r}) \cdot \frac{5}{6} \cdot \left( \frac{1}{6} \right)^r.
-\)</span>$</p>
+<p class="sd-card-text">So this contributes:</p>
+<div class="math notranslate nohighlight">
+\[
+   (1 - p_{n - r}) \cdot \frac{5}{6} \cdot \left( \frac{1}{6} \right)^r.
+   \]</div>
 </li>
 </ol>
-<p class="sd-card-text">Putting it together:
-$<span class="math notranslate nohighlight">\(
+<p class="sd-card-text">Putting it together:</p>
+<div class="math notranslate nohighlight">
+\[
 p_{n+1} = p_n + (1 - p_{n - r}) \cdot \frac{5}{6} \cdot \frac{1}{6^r}.
-\)</span>$</p>
+\]</div>
 <p class="sd-card-text">Now we compute the value.</p>
 </div>
 </details><div class="cell tag_hide-input tag_hide-output docutils container">
