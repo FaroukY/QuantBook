@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Problem 9: Spaghetti Topology &#8212; Quant Interview Handbook</title>
+    <title>Problem 39: Carnival Coin Toss &#8212; Quant Interview Handbook</title>
   
   
   
@@ -60,12 +60,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/probex/p9';</script>
-    <link rel="canonical" href="/QuantBook/chapters/probex/p9.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/probex/p39';</script>
+    <link rel="canonical" href="/QuantBook/chapters/probex/p39.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Problem 10: Practice Makes Probability" href="p10.html" />
-    <link rel="prev" title="Problem 8: Card Sandwich" href="p8.html" />
+    <link rel="next" title="Problem 40: Love Thy Neighbor" href="p40.html" />
+    <link rel="prev" title="Problem 38: The Two-Win Rule" href="p38.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -193,7 +193,7 @@
 <li class="toctree-l2"><a class="reference internal" href="p6.html">Problem 6: Rigged Roll</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p7.html">Problem 7: The Backstep Bunny</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p8.html">Problem 8: Card Sandwich</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem 9: Spaghetti Topology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p9.html">Problem 9: Spaghetti Topology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p10.html">Problem 10: Practice Makes Probability</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p11.html">Problem 11: Gambler’s Ruin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p12.html">Problem 12: Chop, Chop, Triangle?</a></li>
@@ -223,7 +223,7 @@
 <li class="toctree-l2"><a class="reference internal" href="p36.html">Problem 36: Uniform from Chaos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p37.html">Problem 37: Matching Madness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p38.html">Problem 38: The Two-Win Rule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="p39.html">Problem 39: Carnival Coin Toss</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem 39: Carnival Coin Toss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p40.html">Problem 40: Love Thy Neighbor</a></li>
 </ul>
 </details></li>
@@ -342,7 +342,7 @@
       
       
       
-      <li><a href="https://github.com/FaroukY/QuantBook/issues/new?title=Issue%20on%20page%20%2Fchapters/probex/p9.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/FaroukY/QuantBook/issues/new?title=Issue%20on%20page%20%2Fchapters/probex/p39.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -372,7 +372,7 @@
       
       
       
-      <li><a href="../../_sources/chapters/probex/p9.md" target="_blank"
+      <li><a href="../../_sources/chapters/probex/p39.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -454,7 +454,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problem 9: Spaghetti Topology</h1>
+    <h1>Problem 39: Carnival Coin Toss</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -468,84 +468,99 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-9-spaghetti-topology">
-<h1>Problem 9: Spaghetti Topology<a class="headerlink" href="#problem-9-spaghetti-topology" title="Link to this heading">#</a></h1>
-<p>You have <span class="math notranslate nohighlight">\(n\)</span> noodles in a bowl. Each noodle has two loose ends, for a total of <span class="math notranslate nohighlight">\(2n\)</span> ends. Repeatedly, you select two free ends uniformly at random and tie them together to form a connection. You continue this process until all ends are paired.</p>
-<p>At the end, the noodles will form one or more closed loops (where a ``loop’’ is a sequence of ends connected such that it closes back on itself). Let <span class="math notranslate nohighlight">\(L_n\)</span> be the number of such loops formed. Find an expression for the expected value <span class="math notranslate nohighlight">\(\mathbb{E}[L_n]\)</span>. How does this behave asymptotically?</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-39-carnival-coin-toss">
+<h1>Problem 39: Carnival Coin Toss<a class="headerlink" href="#problem-39-carnival-coin-toss" title="Link to this heading">#</a></h1>
+<p>In a common carnival game, a player tosses a penny from about 5 feet onto a table ruled with 1-inch by 1-inch squares. The penny has a diameter of <span class="math notranslate nohighlight">\(\frac{3}{4}\)</span> inches.</p>
+<p>If the penny lands entirely within a single square, the player wins 5 cents (but forfeits the penny). Otherwise, they lose the penny.</p>
+<p>Assuming the penny lands uniformly at random on the table and does not bounce off, what is the probability that the penny lands entirely within one square (i.e., the player wins)?</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Click to show solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text"><strong>Step 1. Recursive structure.</strong><br />
-We begin with <span class="math notranslate nohighlight">\(n\)</span> noodles, each having two free ends, for a total of <span class="math notranslate nohighlight">\(2n\)</span> ends. At each step, we select two free ends uniformly at random and tie them together. We repeat this process until all ends are paired.</p>
-<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(L_n\)</span> denote the number of loops formed by the end of the process.</p>
-<p class="sd-card-text">To derive a recurrence, condition on the first pairing: pick an end arbitrarily, and let it belong to some noodle. There are <span class="math notranslate nohighlight">\(2n-1\)</span> other free ends it could connect to. Among these, exactly one is the other end of the same noodle, which would immediately form a 1-loop. The remaining <span class="math notranslate nohighlight">\(2n-2\)</span> ends must connect two different noodles, effectively reducing the total number of noodles by one and making one longer noodle.</p>
-<p class="sd-card-text"><strong>Diagram.</strong></p>
-<script src="https://tikzjax.com/v1/tikzjax.js"></script>
-<div align="center">
-<script type="text/tikz">
-\begin{tikzpicture}[scale=1.0, every node/.style={circle,draw,minimum size=4pt,inner sep=0pt}]
-  % Ends
-  \foreach \i in {1,...,6} {
-    \node (A\i) at (\i,0) {};
-  }
-  % Labels
-  \node[below=0.2cm] at (A1) {\tiny end};
-  \node[below=0.2cm] at (A2) {\tiny end};
-  \node[below=0.2cm] at (A3) {\tiny end};
-  \node[below=0.2cm] at (A4) {\tiny end};
-  \node[below=0.2cm] at (A5) {\tiny end};
-  \node[below=0.2cm] at (A6) {\tiny end};
-
-  % Connections (arbitrary example)
-  \draw[bend left=40, thick] (A1) to (A4);
-  \draw[bend left=40, thick] (A2) to (A3);
-  \draw[bend left=40, thick] (A5) to (A6);
-\end{tikzpicture}
-</script>
-</div><p class="sd-card-text"><em>Illustration:</em> Each node represents a free end. Arcs show how ends are tied together. Loops may involve multiple noodles chained together into a single closed cycle.</p>
+<p class="sd-card-text">Each 1″×1″ square on the table can be treated identically by symmetry, so it suffices to work inside one unit–square cell and ask: “What is the probability that the center of the penny lands at least its radius away from each of the four sides of the square?”</p>
+<p class="sd-card-text">The penny’s diameter is <span class="math notranslate nohighlight">\(\tfrac{3}{4}\)</span> in, so its radius is</p>
 <div class="math notranslate nohighlight">
 \[
-\mathbb{E}[L_n] = \frac{1}{2n-1}(1 + \mathbb{E}[L_{n-1}]) + \frac{2n-2}{2n-1} \cdot \mathbb{E}[L_{n-1}] = \frac{1}{2n-1} + \mathbb{E}[L_{n-1}].
+r = \frac{3/4}{2} = \frac{3}{8}.
 \]</div>
-<p class="sd-card-text"><strong>Step 2. Solving the recurrence.</strong><br />
-Unrolling the recurrence:</p>
+<p class="sd-card-text">If the center <span class="math notranslate nohighlight">\((x,y)\)</span> of the penny lies in the region</p>
 <div class="math notranslate nohighlight">
 \[
-\mathbb{E}[L_n] = \sum_{i=1}^n \frac{1}{2i - 1}.
+r \,\le x \le 1 - r, \quad r \,\le y \le 1 - r,
 \]</div>
-<p class="sd-card-text">This is the sum of the first <span class="math notranslate nohighlight">\(n\)</span> odd reciprocals:</p>
+<p class="sd-card-text">then the entire disk of radius <span class="math notranslate nohighlight">\(r\)</span> fits inside the square. Otherwise the penny crosses a grid line and you lose.</p>
+<p class="sd-card-text">Thus the “safe” region for the center is a smaller square of side</p>
 <div class="math notranslate nohighlight">
 \[
-\mathbb{E}[L_n] = 1 + \frac{1}{3} + \frac{1}{5} + \cdots + \frac{1}{2n - 1}.
+1 - 2r = 1 - 2 \cdot \frac{3}{8} = \frac{1}{4},
 \]</div>
-<p class="sd-card-text"><strong>Step 3. Asymptotic behavior.</strong><br />
-To understand the growth of this sum, we relate it to the harmonic series. The sum of reciprocals of the first <span class="math notranslate nohighlight">\(2n\)</span> integers is:</p>
+<p class="sd-card-text">so its area is</p>
 <div class="math notranslate nohighlight">
 \[
-H_{2n} = \sum_{k=1}^{2n} \frac{1}{k} = \ln(2n) + \gamma + o(1).
+\left(1 - 2r\right)^2 = \left(\tfrac{1}{4}\right)^2 = \tfrac{1}{16}.
 \]</div>
-<p class="sd-card-text">The sum of the reciprocals of the even integers up to <span class="math notranslate nohighlight">\(2n\)</span> is:</p>
+<p class="sd-card-text">Since the center is uniformly distributed over the unit square, the probability of winning is</p>
 <div class="math notranslate nohighlight">
 \[
-\sum_{k=1}^n \frac{1}{2k} = \frac{1}{2} H_n = \frac{1}{2} \ln(n) + \frac{\gamma}{2} + o(1).
+\boxed{\frac{1}{16} \approx 0.0625\,.}
 \]</div>
-<p class="sd-card-text">Therefore, the sum of the odd reciprocals is:</p>
-<div class="math notranslate nohighlight">
-\[
-\sum_{i=1}^n \frac{1}{2i - 1} = H_{2n} - \sum_{k=1}^n \frac{1}{2k} = \ln(2n) - \frac{1}{2} \ln(n) + O(1) = \frac{1}{2} \ln(n) + O(1).
-\]</div>
-<p class="sd-card-text">Hence, the expected number of loops satisfies:</p>
-<div class="math notranslate nohighlight">
-\[
-\mathbb{E}[L_n] = \sum_{i=1}^n \frac{1}{2i - 1} \sim \frac{1}{2} \ln(n).
-\]</div>
-<p class="sd-card-text"><strong>Final Answer:</strong></p>
-<div class="math notranslate nohighlight">
-\[
-\boxed{\mathbb{E}[L_n] = \sum_{i=1}^n \frac{1}{2i - 1} \sim \frac{1}{2} \ln(n)}
-\]</div>
+<hr class="docutils" />
+<p class="sd-card-text"><strong>Figure: Allowed Center Region</strong></p>
 </div>
-</details></section>
+</details><div class="cell tag_hide-input tag_hide-output docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">patches</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="mi">8</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Unit square</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Inner safe region</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="n">r</span><span class="p">,</span> <span class="n">r</span><span class="p">),</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;cornflowerblue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">))</span>
+
+<span class="c1"># Dashed boundary lines</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="c1"># Labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r</span> <span class="o">+</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;$x=1-r$&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;$x=r$&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">r</span> <span class="o">-</span> <span class="mf">0.02</span><span class="p">,</span> <span class="s1">&#39;$y=r$&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">r</span> <span class="o">+</span> <span class="mf">0.02</span><span class="p">,</span> <span class="s1">&#39;$y=1-r$&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;Safe region&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.08</span><span class="p">,</span> <span class="s1">&#39;Unit square (1″×1″)&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">r</span> <span class="o">-</span> <span class="mf">0.06</span><span class="p">,</span> <span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">frac</span><span class="si">{1}{4}</span><span class="s1">$ side&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<img alt="../../_images/4d54d66d4e08e4825be1a34c35f6f190816bc4dd25f4e147237050b2a0ba5e4c.png" src="../../_images/4d54d66d4e08e4825be1a34c35f6f190816bc4dd25f4e147237050b2a0ba5e4c.png" />
+</div>
+</details>
+</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -578,20 +593,20 @@ H_{2n} = \sum_{k=1}^{2n} \frac{1}{k} = \ln(2n) + \gamma + o(1).
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="p8.html"
+       href="p38.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Problem 8: Card Sandwich</p>
+        <p class="prev-next-title">Problem 38: The Two-Win Rule</p>
       </div>
     </a>
     <a class="right-next"
-       href="p10.html"
+       href="p40.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Problem 10: Practice Makes Probability</p>
+        <p class="prev-next-title">Problem 40: Love Thy Neighbor</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
