@@ -1,0 +1,682 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Problem 4: The Roll-Take Conundrum &#8212; Quant Interview Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/strategygames/p4';</script>
+    <link rel="canonical" href="/QuantBook/chapters/strategygames/p4.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Problem 5: Ace or Bust" href="p5.html" />
+    <link rel="prev" title="Problem 3: Game of Throws" href="p3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Quant Interview Handbook - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Quant Interview Handbook - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Quant Interview Handbook
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../probex/probex.html">Probability and Expected Value</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p1.html">Problem 1: Roller Coaster Ride</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p2.html">Problem 2: Face Value Multiplicity Product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p3.html">Problem 3: Stairway to Random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p4.html">Problem 4: Hat Party</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p5.html">Problem 5: One Too Many</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p6.html">Problem 6: Rigged Roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p7.html">Problem 7: The Backstep Bunny</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p8.html">Problem 8: Card Sandwich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p9.html">Problem 9: Spaghetti Topology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p10.html">Problem 10: Practice Makes Probability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p11.html">Problem 11: Gambler’s Ruin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p12.html">Problem 12: Chop, Chop, Triangle?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p13.html">Problem 13: Tight Fit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p14.html">Problem 14: All In (or Not)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p15.html">Problem 15: The Shrinking Product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p16.html">Problem 16: Coin Toss Monotony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p17.html">Problem 17: Streak Freak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p18.html">Problem 18: No Change, No Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p19.html">Problem 19: Arc Nemesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p20.html">Problem 20: Hedge Me Baby One More Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p21.html">Problem 21: Déjà Roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p22.html">Problem 22: Rollin’ Uphill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p23.html">Problem 23: Gotta Catch ’Em All</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p24.html">Problem 24: Chasing 65</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p25.html">Problem 25: Roll to Completion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p26.html">Problem 26: The Variety Roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p27.html">Problem 27: High Roller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p28.html">Problem 28: Runaway Sixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p29.html">Problem 29: Never Back Down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p30.html">Problem 30: Dice Dropout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p31.html">Problem 31: One Equals Two</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p32.html">Problem 32: Summing the Climb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p33.html">Problem 33: Will We Get There?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p34.html">Problem 34: One Roll, Two Rolls, Tomato, Tomahto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p35.html">Problem 35: Sum Doppelgangers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p36.html">Problem 36: Uniform from Chaos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p37.html">Problem 37: Matching Madness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p38.html">Problem 38: The Two-Win Rule</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../markov/markov.html">Markov Chains and Random Walks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../markov/p1.html">Problem 1: Mean Distance to Santa</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="strategy.html">Strategy Games and Puzzles</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="p1.html">Problem 1: The Apple Smuggler’s Dilemma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p2.html">Problem 2: Among Us: The Algorithmic Edition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p3.html">Problem 3: Game of Throws</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem 4: The Roll-Take Conundrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p5.html">Problem 5: Ace or Bust</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../brainteasers/brainteasers.html">Brain Teasers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../brainteasers/p1.html">Problem 1: Roller Coaster Ride</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../statistics/stats.html">Statistics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/p1.html">Problem 1: Roller Coaster Ride</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../calclinalg/calclinalg.html">Calculus and Linear Algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../calclinalg/p1.html">Problem 1: Roller Coaster Ride</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithms/algo.html">Algorithms and Numerical Methods</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algorithms/p1.html">Problem 1: Roller Coaster Ride</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../marketmaking/mm.html">Market Making Games</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../marketmaking/p1.html">Problem 1: Roller Coaster Ride</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../fermi/fermi.html">Fermi Questions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fermi/p1.html">Problem 1: Roller Coaster Ride</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sequences/sequences.html">Sequence Completion Games</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sequences/p1.html">Problem 1: Roller Coaster Ride</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../companyspecific/company.html">Company Specific Questions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../companyspecific/p1.html">Problem 1: Roller Coaster Ride</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/FaroukY/QuantBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FaroukY/QuantBook/issues/new?title=Issue%20on%20page%20%2Fchapters/strategygames/p4.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/strategygames/p4.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Problem 4: The Roll-Take Conundrum</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-4-the-roll-take-conundrum">
+<h1>Problem 4: The Roll-Take Conundrum<a class="headerlink" href="#problem-4-the-roll-take-conundrum" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This problem requires some programming experience/environment</p>
+</div>
+<p>Consider a game involving a fair <span class="math notranslate nohighlight">\(k\)</span>-sided die with faces labeled <span class="math notranslate nohighlight">\(1\)</span> through <span class="math notranslate nohighlight">\(k\)</span>, initially showing a uniformly at random face. You are allowed to perform <span class="math notranslate nohighlight">\(A\)</span> actions in total. At each step, you may choose between the following two actions:</p>
+<p>Roll: Re-roll the die to generate a new face uniformly at random from <span class="math notranslate nohighlight">\(\{1, \dots, k\}\)</span>.</p>
+<p>Take: Accept the current face value as a payout (equal to that face value), then immediately roll the die again. You may not take twice in a row; a roll must occur between any two takes.</p>
+<p>A natural strategy is to fix a threshold <span class="math notranslate nohighlight">\(n \in \{1, \dots, k\}\)</span> in advance and to accept (take) the value currently showing if and only if it is at least <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Assuming optimal play, what <span class="math notranslate nohighlight">\(n\)</span> should you choose for <span class="math notranslate nohighlight">\(k = 20\)</span>, <span class="math notranslate nohighlight">\(A = 100\)</span>?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Click to show solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">We fix a threshold <span class="math notranslate nohighlight">\(n\)</span> and analyze the expected payout under the threshold strategy: take the current value if and only if it is at least <span class="math notranslate nohighlight">\(n\)</span>. Let <span class="math notranslate nohighlight">\(E(t)\)</span> denote the expected total payout with <span class="math notranslate nohighlight">\(t\)</span> actions remaining, given that the die shows a uniformly random value due to previous rolls.</p>
+<p class="sd-card-text">If <span class="math notranslate nohighlight">\(t \geq 2\)</span>, each <strong>take</strong> uses <strong>2 actions</strong>: one to take and one mandatory roll afterward. A <strong>roll</strong> uses 1 action.</p>
+<p class="sd-card-text">Assume that at a given state the die shows a uniformly random value due to previous rolls. Then:</p>
+<ul>
+<li><p class="sd-card-text">With probability <span class="math notranslate nohighlight">\(\dfrac{k - n + 1}{k}\)</span>, the current die value is <span class="math notranslate nohighlight">\(\geq n\)</span>, and we choose to <strong>take</strong>. This consumes 2 actions (since we have to roll after taking), and gives expected payout</p>
+<div class="math notranslate nohighlight">
+\[
+  \mathbb{E}[\text{value} \mid \geq n] = \frac{n + k}{2},
+  \]</div>
+<p class="sd-card-text">and then we’re left with <span class="math notranslate nohighlight">\(t - 2\)</span> actions.</p>
+</li>
+<li><p class="sd-card-text">With probability <span class="math notranslate nohighlight">\(\dfrac{n - 1}{k}\)</span>, the current value is <span class="math notranslate nohighlight">\(&lt; n\)</span>, and we <strong>roll</strong> again, costing 1 action and leaving <span class="math notranslate nohighlight">\(t - 1\)</span> actions.</p></li>
+</ul>
+<p class="sd-card-text">Therefore, for <span class="math notranslate nohighlight">\(t \geq 2\)</span>, the recurrence is:</p>
+<div class="math notranslate nohighlight">
+\[
+E(t) = \frac{n - 1}{k} E(t - 1) + \frac{k - n + 1}{k} \left( \frac{n + k}{2} + E(t - 2) \right).
+\]</div>
+<p class="sd-card-text">The base cases are:</p>
+<div class="math notranslate nohighlight">
+\[
+E(0) = 0, \quad E(1) = \frac{k+1}{2}.
+\]</div>
+<p class="sd-card-text">And our answer is <span class="math notranslate nohighlight">\(E(A)\)</span>. Unfortunately, this recurrence has no clean solution.</p>
+<hr class="docutils" />
+<p class="sd-card-text"><strong>Asymptotic Behavior</strong></p>
+<p class="sd-card-text">When <span class="math notranslate nohighlight">\(A\)</span> is large, we expect the average reward per action to converge to some constant depending on <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(n\)</span>. We can approximate this as:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Average reward} \approx \frac{\text{number of actions}}{\text{expected number of actions per decision}} \cdot \text{expected gain per take}.
+\]</div>
+<p class="sd-card-text">More precisely:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Average reward} \approx \frac{A}{ \frac{k}{k-n+1} + 1 } \cdot  \frac{n + k}{2}.
+\]</div>
+<p class="sd-card-text">This expression can be maximized over <span class="math notranslate nohighlight">\(n\)</span> to get the asymptotically optimal strategy by differentiating with respect to <span class="math notranslate nohighlight">\(n\)</span>, and setting the derivative to zero to get:</p>
+<div class="math notranslate nohighlight">
+\[
+n = 2k + 1 - \sqrt{3k^2 + k}.
+\]</div>
+<p class="sd-card-text">In our case, for <span class="math notranslate nohighlight">\(k = 20,\; A = 100\)</span>, this gives <span class="math notranslate nohighlight">\(n \approx 6\)</span>, and reward <span class="math notranslate nohighlight">\(\approx \frac{3900}{7} \approx 557.143\)</span>. However, as noted above, this is simply an asymptotic behavior and not an exact solution.</p>
+<hr class="docutils" />
+<p class="sd-card-text"><strong>Implementation Strategy</strong></p>
+<p class="sd-card-text">For fixed <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(A\)</span>, we compute <span class="math notranslate nohighlight">\(E(t)\)</span> for <span class="math notranslate nohighlight">\(t = 0\)</span> to <span class="math notranslate nohighlight">\(t = A\)</span> for each threshold <span class="math notranslate nohighlight">\(n = 1\)</span> to <span class="math notranslate nohighlight">\(k\)</span> using dynamic programming, and then select the value of <span class="math notranslate nohighlight">\(n\)</span> that maximizes <span class="math notranslate nohighlight">\(E(A)\)</span>. Below is Python code to do this.</p>
+</div>
+</details><div class="cell tag_hide-input tag_hide-output docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># Number of faces</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Number of actions available</span>
+<span class="n">best_reward</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-inf&#39;</span><span class="p">)</span>
+<span class="n">best_n</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># Try each possible threshold n from 1 to k</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># Initialize E(0) = 0, E(1) = (k+1)/2 as base cases</span>
+    <span class="n">E_prev2</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">E_prev1</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+    <span class="c1"># Compute E(A) using recurrence relation</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">E_prev2</span><span class="p">,</span> <span class="n">E_prev1</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">E_prev1</span><span class="p">,</span>
+            <span class="p">((</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">E_prev1</span> <span class="o">+</span> <span class="p">((</span><span class="n">k</span> <span class="o">-</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">n</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">E_prev2</span><span class="p">),</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Update best threshold if this one gives better expected reward</span>
+    <span class="k">if</span> <span class="n">E_prev1</span> <span class="o">&gt;</span> <span class="n">best_reward</span><span class="p">:</span>
+        <span class="n">best_reward</span> <span class="o">=</span> <span class="n">E_prev1</span>
+        <span class="n">best_n</span> <span class="o">=</span> <span class="n">n</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Best reward is at n=</span><span class="si">{</span><span class="n">best_n</span><span class="si">}</span><span class="s2"> and reward=</span><span class="si">{</span><span class="n">best_reward</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best reward is at n=6 and reward=559.96
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/strategygames"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="p3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Problem 3: Game of Throws</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="p5.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Problem 5: Ace or Bust</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Elfarouk Harb
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Elfarouk Harb.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
