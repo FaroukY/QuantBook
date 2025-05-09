@@ -39,7 +39,7 @@ Many of the problems in this book are considered folklore, having appeared in va
 10. [https://gurmeet.net/puzzles/](https://gurmeet.net/puzzles/)  
 11. [https://brainstellar.com/](https://brainstellar.com/)  
 12. [http://puzzles.nigelcoldwell.co.uk/](http://puzzles.nigelcoldwell.co.uk/)  
-13. [http://www.qbyte.org/puzzles/](http://www.qbyte.org/puzzles/)  
+13. [https://www.puzzleprime.com/puzzles/](https://www.puzzleprime.com/puzzles/)  
 14. *Mathematical Puzzles, Revised Edition* by Peter Winkler.  
 15. *A Collection of Dice Problems* by Matthew M. Conroy.  
 16. *Algorithmic Puzzles* by Maria Levitin and Anany Levitin.  

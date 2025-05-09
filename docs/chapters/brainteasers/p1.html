@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Problem 1: Roller Coaster Ride &#8212; Quant Interview Handbook</title>
+    <title>Problem 1: 3 Horses to Rule Them All &#8212; Quant Interview Handbook</title>
   
   
   
@@ -58,13 +58,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/brainteasers/p1';</script>
     <link rel="canonical" href="/QuantBook/chapters/brainteasers/p1.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Statistics" href="../statistics/stats.html" />
+    <link rel="next" title="Problem 2: Jaws: Circular Logic" href="p2.html" />
     <link rel="prev" title="Brain Teasers" href="brainteasers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -225,6 +223,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../probex/p38.html">Problem 38: The Two-Win Rule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../probex/p39.html">Problem 39: Carnival Coin Toss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../probex/p40.html">Problem 40: Love Thy Neighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probex/p41.html">Problem 41: HHH vs. THH: Dawn of Flips</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../strategygames/strategy.html">Strategy Games and Puzzles</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -237,7 +236,8 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="brainteasers.html">Brain Teasers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem 1: Roller Coaster Ride</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem 1: 3 Horses to Rule Them All</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p2.html">Problem 2: Jaws: Circular Logic</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../statistics/stats.html">Statistics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -262,10 +262,6 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../sequences/sequences.html">Sequence Completion Games</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../sequences/p1.html">Problem 1: Roller Coaster Ride</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../companyspecific/company.html">Company Specific Questions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../companyspecific/p1.html">Problem 1: Roller Coaster Ride</a></li>
 </ul>
 </details></li>
 </ul>
@@ -451,7 +447,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problem 1: Roller Coaster Ride</h1>
+    <h1>Problem 1: 3 Horses to Rule Them All</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -465,79 +461,49 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-1-roller-coaster-ride">
-<h1>Problem 1: Roller Coaster Ride<a class="headerlink" href="#problem-1-roller-coaster-ride" title="Link to this heading">#</a></h1>
-<p>A sequence <span class="math notranslate nohighlight">\(y_1, ..., y_k\)</span> of real numbers is called zigzag if <span class="math notranslate nohighlight">\(k=1\)</span>, or if <span class="math notranslate nohighlight">\(y_2-y_1, y_3-y_2,...,y_k-y_{k-1}\)</span> are nonzero and alternate in sign. For example, <span class="math notranslate nohighlight">\(0.1, 0.4, 0.3, 0.6, 0.15\)</span> is zigzag. Let <span class="math notranslate nohighlight">\(X_1, X_2, ... , X_n\)</span> be chosen independently from the uniform distribution on <span class="math notranslate nohighlight">\([0, 1]\)</span>. Let <span class="math notranslate nohighlight">\(a(X_1, ..., X_n)\)</span> be the longest zigzag subsequence in <span class="math notranslate nohighlight">\(X_1, ..., X_n\)</span> (i.e., the largest value of <span class="math notranslate nohighlight">\(k\)</span> for which there exists an increasing sequence of integers <span class="math notranslate nohighlight">\(i_1, i_2, ... ,i_k\)</span> such that <span class="math notranslate nohighlight">\(X_{i_1} , X_{i_2} , ... , X_{i_k}\)</span> is zigzag). Find the expected value of <span class="math notranslate nohighlight">\(a(X_1, ..., X_n)\)</span> for <span class="math notranslate nohighlight">\(n\geq 2\)</span>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-1-3-horses-to-rule-them-all">
+<h1>Problem 1: 3 Horses to Rule Them All<a class="headerlink" href="#problem-1-3-horses-to-rule-them-all" title="Link to this heading">#</a></h1>
+<p>You are given 25 horses and need to determine the top 3 fastest horses among them. You may conduct races involving at most 5 horses at a time. A race only reveals the <strong>relative ranking</strong> (1st to 5th) of the horses in that race — no actual speed measurements are available.</p>
+<p>What is the <strong>minimum number of races</strong> required, in the worst case, to determine the 3 fastest horses overall?</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Click to show solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The main difficulty of the problem is simplified significantly by the following crucial observation:</p>
-<div class="tip admonition">
-<p class="admonition-title">Lemma: Zigzag characterization</p>
-<p class="sd-card-text">The longest zigzag subsequence consists of elements that are either local maxima (<em>peaks</em>), local minima (<em>troughs</em>), or the endpoints <span class="math notranslate nohighlight">\( X_1 \)</span> and <span class="math notranslate nohighlight">\( X_n \)</span>. More precisely, an optimal zigzag subsequence always includes <span class="math notranslate nohighlight">\( X_1 \)</span>, <span class="math notranslate nohighlight">\( X_n \)</span>, and exactly one point from each monotone segment between consecutive peaks and troughs.</p>
-</div>
-<div class="proof admonition" id="proof">
-<p class="sd-card-text">Proof. To see why this is true, consider an arbitrary zigzag
-subsequence. Suppose the subsequence contains two elements from the same
-strictly monotone segment between two consecutive local extrema of the
-sequence. Since the subsequence is zigzag, the sign of the difference
-between consecutive terms must alternate. However, within a strictly
-monotone segment, the differences have constant sign, and thus it is
-impossible to select more than one point without violating the zigzag
-condition.</p>
-<p class="sd-card-text">Conversely, it is always possible to select exactly one point from each
-strictly monotone segment. Specifically, if we select each local
-extremum (peaks and troughs), along with the first and last elements
-(endpoints), the subsequence is clearly zigzag. Furthermore, such a
-subsequence is maximal, as argued above. ◻</p>
-</div>
-<p class="sd-card-text"><strong>Step 2: Probabilistic analysis.</strong></p>
-<p class="sd-card-text">We now use the Lemma to compute the expected value
-<span class="math notranslate nohighlight">\(\mathbb{E}[a(X_1,\dots,X_n)]\)</span>.</p>
-<p class="sd-card-text">Define indicator random variables <span class="math notranslate nohighlight">\(Y_i\)</span>, for <span class="math notranslate nohighlight">\(2 \leq i \leq n-1\)</span>, by</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-Y_i = 
-\begin{cases}
-1 &amp; \text{if } X_i \text{ is a peak or trough}, \\[5pt]
-0 &amp; \text{otherwise}.
-\end{cases}
-\end{split}\]</div>
-<p class="sd-card-text"><strong>Step 3: Computing the expectation <span class="math notranslate nohighlight">\(\mathbb{E}[Y_i]\)</span>.</strong></p>
-<p class="sd-card-text">Consider three consecutive random variables <span class="math notranslate nohighlight">\(X_{i-1}, X_i, X_{i+1}\)</span>,
-each uniformly and independently distributed on <span class="math notranslate nohighlight">\([0,1]\)</span>. There are
-<span class="math notranslate nohighlight">\(3! = 6\)</span> equally likely possible orderings of these three distinct
-points. The variable <span class="math notranslate nohighlight">\(Y_i\)</span> equals zero only if the ordering is strictly
-increasing or strictly decreasing (i.e., <span class="math notranslate nohighlight">\((X_{i-1},X_i,X_{i+1})\)</span> ordered
-as either <span class="math notranslate nohighlight">\(1&lt;2&lt;3\)</span> or <span class="math notranslate nohighlight">\(3&gt;2&gt;1\)</span>). Thus, exactly two out of these six
-equally likely permutations correspond to <span class="math notranslate nohighlight">\(Y_i=0\)</span>.</p>
-<p class="sd-card-text">Therefore,</p>
-<div class="math notranslate nohighlight">
-\[\Pr(Y_i = 0) = \frac{2}{6} = \frac{1}{3} \quad\Rightarrow\quad \Pr(Y_i = 1) = \frac{2}{3}.\]</div>
-<p class="sd-card-text">Hence, the expectation of <span class="math notranslate nohighlight">\(Y_i\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[\mathbb{E}[Y_i] = 1 \cdot \frac{2}{3} + 0 \cdot \frac{1}{3} = \frac{2}{3}.\]</div>
-<p class="sd-card-text"><strong>Step 4: Calculating the expectation by linearity.</strong></p>
-<p class="sd-card-text">By the Lemma above, the length of the longest zigzag subsequence is
-given by:</p>
-<div class="math notranslate nohighlight">
-\[a(X_1,\dots,X_n) = 2 + \sum_{i=2}^{n-1} Y_i,\]</div>
-<p class="sd-card-text">where the first and last elements (<span class="math notranslate nohighlight">\(X_1, X_n\)</span>) are always counted, and each peak
-or trough is counted exactly once.</p>
-<p class="sd-card-text">Using linearity of expectation, we get:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\mathbb{E}[a(X_1,\dots,X_n)]
-&amp;= 2 + \mathbb{E}\left[\sum_{i=2}^{n-1} Y_i\right]\\[6pt]
-&amp;= 2 + \sum_{i=2}^{n-1}\mathbb{E}[Y_i]\\[6pt]
-&amp;= 2 + \sum_{i=2}^{n-1}\frac{2}{3}\\[6pt]
-&amp;= 2 + \frac{2(n-2)}{3}\\[6pt]
-&amp;= \frac{6}{3} + \frac{2(n-2)}{3}\\[6pt]
-&amp;= \frac{2n + 2}{3}.
-\end{aligned}\end{split}\]</div>
-<p class="sd-card-text">Thus, we have the final answer:</p>
-<div class="math notranslate nohighlight">
-\[\boxed{\frac{2n+2}{3}}.\]</div>
+<p class="sd-card-text">We can do it in <strong>7 races</strong>.</p>
+<p class="sd-card-text">We are given 25 horses and can only race 5 at a time, with each race providing only the relative ordering (1st to 5th). Our goal is to find the <strong>top 3 fastest horses overall</strong>, using as few races as possible in the worst case.</p>
+<hr class="docutils" />
+<p class="sd-card-text"><strong>Group into heats (5 races)</strong></p>
+<p class="sd-card-text">Divide the 25 horses into 5 groups of 5 horses each. Race each group once.</p>
+<ul class="simple">
+<li><p class="sd-card-text">After these 5 races, label the horses in each group by their finish order:</p>
+<ul>
+<li><p class="sd-card-text">Group A: A1 &gt; A2 &gt; A3 &gt; A4 &gt; A5</p></li>
+<li><p class="sd-card-text">Group B: B1 &gt; B2 &gt; B3 &gt; B4 &gt; B5</p></li>
+<li><p class="sd-card-text">Group C: C1 &gt; C2 &gt; C3 &gt; C4 &gt; C5</p></li>
+<li><p class="sd-card-text">Group D: D1 &gt; D2 &gt; D3 &gt; D4 &gt; D5</p></li>
+<li><p class="sd-card-text">Group E: E1 &gt; E2 &gt; E3 &gt; E4 &gt; E5</p></li>
+</ul>
+</li>
+</ul>
+<p class="sd-card-text">This takes <strong>5 races</strong>.</p>
+<hr class="docutils" />
+<p class="sd-card-text"><strong>Race the 5 winners (1 race)</strong></p>
+<p class="sd-card-text">Race the first-place horses from each group:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Race: A1, B1, C1, D1, E1</p></li>
+<li><p class="sd-card-text">Suppose the result is: A1 &gt; B1 &gt; C1 &gt; D1 &gt; E1</p></li>
+</ul>
+<p class="sd-card-text">This race tells us:</p>
+<ul class="simple">
+<li><p class="sd-card-text">A1 is the overall fastest.</p></li>
+</ul>
+<p class="sd-card-text">Now we need to identify which horses might still be in contention for 2nd or 3rd place. Candidates for 2nd and 3rd are:</p>
+<ul class="simple">
+<li><p class="sd-card-text">A2 and A3 (they lost only to A1 in the first race).</p></li>
+<li><p class="sd-card-text">B1 (came 2nd in winners race).</p></li>
+<li><p class="sd-card-text">B2 (lost only to B1 in group B).</p></li>
+<li><p class="sd-card-text">C1 (came 3rd in winners race).</p></li>
+</ul>
+<p class="sd-card-text">So we race these 5 horses: A2, A3, B1, B2, C1. This is the <strong>7th race</strong>. The top 2 finishers in this race are the 2nd and 3rd fastest horses overall.</p>
 </div>
 </details></section>
 
@@ -581,11 +547,11 @@ or trough is counted exactly once.</p>
       </div>
     </a>
     <a class="right-next"
-       href="../statistics/stats.html"
+       href="p2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Statistics</p>
+        <p class="prev-next-title">Problem 2: Jaws: Circular Logic</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
