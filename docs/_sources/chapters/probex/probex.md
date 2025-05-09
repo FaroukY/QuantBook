@@ -1,4 +1,4 @@
-# Probability and Expected Value
+# Probability Theory and Stochastic Processes
 
 - [](p1.md)
 - [](p2.md)
@@ -40,3 +40,12 @@
 - [](p38.md)
 - [](p39.md)
 - [](p40.md)
+- [](p41.md)
+<!-- - [](p42.md)
+- [](p43.md)
+- [](p44.md)
+- [](p45.md)
+- [](p46.md)
+- [](p47.md)
+- [](p48.md)
+ -->

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Problem 1: Roller Coaster Ride &#8212; Quant Interview Handbook</title>
+    <title>Problem 1: Mean Distance to Santa &#8212; Quant Interview Handbook</title>
   
   
   
@@ -184,7 +184,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../probex/probex.html">Probability and Expected Value</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../probex/probex.html">Probability Theory and Stochastic Processes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../probex/p1.html">Problem 1: Roller Coaster Ride</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../probex/p2.html">Problem 2: Face Value Multiplicity Product</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../probex/p3.html">Problem 3: Stairway to Random</a></li>
@@ -227,10 +227,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../probex/p40.html">Problem 40: Love Thy Neighbor</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../markov/markov.html">Markov Chains and Random Walks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../markov/p1.html">Problem 1: Mean Distance to Santa</a></li>
-</ul>
-</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../strategygames/strategy.html">Strategy Games and Puzzles</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../strategygames/p1.html">Problem 1: The Apple Smuggler’s Dilemma</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../strategygames/p2.html">Problem 2: Among Us: The Algorithmic Edition</a></li>
@@ -248,7 +244,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="calclinalg.html">Calculus and Linear Algebra</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem 1: Roller Coaster Ride</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem 1: Mean Distance to Santa</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../algorithms/algo.html">Algorithms and Numerical Methods</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -454,7 +450,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problem 1: Roller Coaster Ride</h1>
+    <h1>Problem 1: Mean Distance to Santa</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -468,79 +464,62 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-1-roller-coaster-ride">
-<h1>Problem 1: Roller Coaster Ride<a class="headerlink" href="#problem-1-roller-coaster-ride" title="Link to this heading">#</a></h1>
-<p>A sequence <span class="math notranslate nohighlight">\(y_1, ..., y_k\)</span> of real numbers is called zigzag if <span class="math notranslate nohighlight">\(k=1\)</span>, or if <span class="math notranslate nohighlight">\(y_2-y_1, y_3-y_2,...,y_k-y_{k-1}\)</span> are nonzero and alternate in sign. For example, <span class="math notranslate nohighlight">\(0.1, 0.4, 0.3, 0.6, 0.15\)</span> is zigzag. Let <span class="math notranslate nohighlight">\(X_1, X_2, ... , X_n\)</span> be chosen independently from the uniform distribution on <span class="math notranslate nohighlight">\([0, 1]\)</span>. Let <span class="math notranslate nohighlight">\(a(X_1, ..., X_n)\)</span> be the longest zigzag subsequence in <span class="math notranslate nohighlight">\(X_1, ..., X_n\)</span> (i.e., the largest value of <span class="math notranslate nohighlight">\(k\)</span> for which there exists an increasing sequence of integers <span class="math notranslate nohighlight">\(i_1, i_2, ... ,i_k\)</span> such that <span class="math notranslate nohighlight">\(X_{i_1} , X_{i_2} , ... , X_{i_k}\)</span> is zigzag). Find the expected value of <span class="math notranslate nohighlight">\(a(X_1, ..., X_n)\)</span> for <span class="math notranslate nohighlight">\(n\geq 2\)</span>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-1-mean-distance-to-santa">
+<h1>Problem 1: Mean Distance to Santa<a class="headerlink" href="#problem-1-mean-distance-to-santa" title="Link to this heading">#</a></h1>
+<p>Let the Earth be modeled as a unit sphere centered at the origin in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>. The North Pole is the point <span class="math notranslate nohighlight">\(N = (0, 0, 1)\)</span>. A point <span class="math notranslate nohighlight">\(P\)</span> is sampled uniformly at random from the surface of the sphere.</p>
+<p>What is the expected value of the Euclidean distance <span class="math notranslate nohighlight">\(\|P - N\|_2\)</span> between the point <span class="math notranslate nohighlight">\(P\)</span> and the North Pole?</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Click to show solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The main difficulty of the problem is simplified significantly by the following crucial observation:</p>
-<div class="tip admonition">
-<p class="admonition-title">Lemma: Zigzag characterization</p>
-<p class="sd-card-text">The longest zigzag subsequence consists of elements that are either local maxima (<em>peaks</em>), local minima (<em>troughs</em>), or the endpoints <span class="math notranslate nohighlight">\( X_1 \)</span> and <span class="math notranslate nohighlight">\( X_n \)</span>. More precisely, an optimal zigzag subsequence always includes <span class="math notranslate nohighlight">\( X_1 \)</span>, <span class="math notranslate nohighlight">\( X_n \)</span>, and exactly one point from each monotone segment between consecutive peaks and troughs.</p>
-</div>
-<div class="proof admonition" id="proof">
-<p class="sd-card-text">Proof. To see why this is true, consider an arbitrary zigzag
-subsequence. Suppose the subsequence contains two elements from the same
-strictly monotone segment between two consecutive local extrema of the
-sequence. Since the subsequence is zigzag, the sign of the difference
-between consecutive terms must alternate. However, within a strictly
-monotone segment, the differences have constant sign, and thus it is
-impossible to select more than one point without violating the zigzag
-condition.</p>
-<p class="sd-card-text">Conversely, it is always possible to select exactly one point from each
-strictly monotone segment. Specifically, if we select each local
-extremum (peaks and troughs), along with the first and last elements
-(endpoints), the subsequence is clearly zigzag. Furthermore, such a
-subsequence is maximal, as argued above. ◻</p>
-</div>
-<p class="sd-card-text"><strong>Step 2: Probabilistic analysis.</strong></p>
-<p class="sd-card-text">We now use the Lemma to compute the expected value
-<span class="math notranslate nohighlight">\(\mathbb{E}[a(X_1,\dots,X_n)]\)</span>.</p>
-<p class="sd-card-text">Define indicator random variables <span class="math notranslate nohighlight">\(Y_i\)</span>, for <span class="math notranslate nohighlight">\(2 \leq i \leq n-1\)</span>, by</p>
+<p class="sd-card-text"><strong>Step 1: Parametrize the sphere</strong></p>
+<p class="sd-card-text">Let us use spherical coordinates. A point <span class="math notranslate nohighlight">\(P\)</span> on the unit sphere can be written as:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-Y_i = 
-\begin{cases}
-1 &amp; \text{if } X_i \text{ is a peak or trough}, \\[5pt]
-0 &amp; \text{otherwise}.
-\end{cases}
-\end{split}\]</div>
-<p class="sd-card-text"><strong>Step 3: Computing the expectation <span class="math notranslate nohighlight">\(\mathbb{E}[Y_i]\)</span>.</strong></p>
-<p class="sd-card-text">Consider three consecutive random variables <span class="math notranslate nohighlight">\(X_{i-1}, X_i, X_{i+1}\)</span>,
-each uniformly and independently distributed on <span class="math notranslate nohighlight">\([0,1]\)</span>. There are
-<span class="math notranslate nohighlight">\(3! = 6\)</span> equally likely possible orderings of these three distinct
-points. The variable <span class="math notranslate nohighlight">\(Y_i\)</span> equals zero only if the ordering is strictly
-increasing or strictly decreasing (i.e., <span class="math notranslate nohighlight">\((X_{i-1},X_i,X_{i+1})\)</span> ordered
-as either <span class="math notranslate nohighlight">\(1&lt;2&lt;3\)</span> or <span class="math notranslate nohighlight">\(3&gt;2&gt;1\)</span>). Thus, exactly two out of these six
-equally likely permutations correspond to <span class="math notranslate nohighlight">\(Y_i=0\)</span>.</p>
-<p class="sd-card-text">Therefore,</p>
+\[
+P = (\sin\theta\cos\phi,\, \sin\theta\sin\phi,\, \cos\theta),
+\]</div>
+<p class="sd-card-text">where:</p>
 <div class="math notranslate nohighlight">
-\[\Pr(Y_i = 0) = \frac{2}{6} = \frac{1}{3} \quad\Rightarrow\quad \Pr(Y_i = 1) = \frac{2}{3}.\]</div>
-<p class="sd-card-text">Hence, the expectation of <span class="math notranslate nohighlight">\(Y_i\)</span> is</p>
+\[
+\theta \in [0, \pi] \quad \text{(polar angle)}, \qquad
+\phi \in [0, 2\pi] \quad \text{(azimuthal angle)}.
+\]</div>
+<p class="sd-card-text">The surface area element in spherical coordinates is:</p>
 <div class="math notranslate nohighlight">
-\[\mathbb{E}[Y_i] = 1 \cdot \frac{2}{3} + 0 \cdot \frac{1}{3} = \frac{2}{3}.\]</div>
-<p class="sd-card-text"><strong>Step 4: Calculating the expectation by linearity.</strong></p>
-<p class="sd-card-text">By the Lemma above, the length of the longest zigzag subsequence is
-given by:</p>
+\[
+dS = \sin\theta\, d\theta\, d\phi.
+\]</div>
+<hr class="docutils" />
+<p class="sd-card-text"><strong>Step 2: Compute the distance</strong></p>
+<p class="sd-card-text">We want the Euclidean distance between <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(N = (0, 0, 1)\)</span>. Since <span class="math notranslate nohighlight">\(P = (x, y, z)\)</span>, we have:</p>
 <div class="math notranslate nohighlight">
-\[a(X_1,\dots,X_n) = 2 + \sum_{i=2}^{n-1} Y_i,\]</div>
-<p class="sd-card-text">where the first and last elements (<span class="math notranslate nohighlight">\(X_1, X_n\)</span>) are always counted, and each peak
-or trough is counted exactly once.</p>
-<p class="sd-card-text">Using linearity of expectation, we get:</p>
+\[
+\|P - N\|_2 = \sqrt{x^2 + y^2 + (z - 1)^2}.
+\]</div>
+<p class="sd-card-text">Using <span class="math notranslate nohighlight">\(x^2 + y^2 = \sin^2\theta\)</span>, and <span class="math notranslate nohighlight">\(z = \cos\theta\)</span>, we get:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\mathbb{E}[a(X_1,\dots,X_n)]
-&amp;= 2 + \mathbb{E}\left[\sum_{i=2}^{n-1} Y_i\right]\\[6pt]
-&amp;= 2 + \sum_{i=2}^{n-1}\mathbb{E}[Y_i]\\[6pt]
-&amp;= 2 + \sum_{i=2}^{n-1}\frac{2}{3}\\[6pt]
-&amp;= 2 + \frac{2(n-2)}{3}\\[6pt]
-&amp;= \frac{6}{3} + \frac{2(n-2)}{3}\\[6pt]
-&amp;= \frac{2n + 2}{3}.
-\end{aligned}\end{split}\]</div>
-<p class="sd-card-text">Thus, we have the final answer:</p>
+\[
+\|P - N\|_2 = \sqrt{\sin^2\theta + (\cos\theta - 1)^2}
+= \sqrt{2(1 - \cos\theta)}.
+\]</div>
+<hr class="docutils" />
+<p class="sd-card-text"><strong>Step 3: Compute the expectation</strong></p>
+<p class="sd-card-text">We integrate over the sphere using the surface area measure:</p>
 <div class="math notranslate nohighlight">
-\[\boxed{\frac{2n+2}{3}}.\]</div>
+\[
+\mathbb{E}[\|P - N\|_2]
+= \frac{1}{4\pi} \int_0^{2\pi} \int_0^{\pi} \sqrt{2(1 - \cos\theta)}\, \sin\theta\, d\theta\, d\phi.
+\]</div>
+<p class="sd-card-text">The <span class="math notranslate nohighlight">\(\phi\)</span>-integral contributes a factor of <span class="math notranslate nohighlight">\(2\pi\)</span>, so:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{E}[\|P - N\|_2] = \frac{1}{2} \int_0^\pi \sqrt{2(1 - \cos\theta)}\, \sin\theta\, d\theta.
+\]</div>
+<p class="sd-card-text">Make substitution <span class="math notranslate nohighlight">\(u = 1 - \cos\theta\)</span>, so <span class="math notranslate nohighlight">\(du = \sin\theta\, d\theta\)</span>, and <span class="math notranslate nohighlight">\(u \in [0, 2]\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{E}[\|P - N\|_2] = \frac{1}{2} \int_0^2 \sqrt{2u}\, du = \frac{\sqrt{2}}{2} \int_0^2 \sqrt{u}\, du
+= \sqrt{2} \cdot \left[ \frac{2^{3/2}}{3} \right] = \boxed{\frac{4}{3}}.
+\]</div>
 </div>
 </details></section>
 
