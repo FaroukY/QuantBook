@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Problem 1: Roller Coaster Ride &#8212; Quant Interview Handbook</title>
+    <title>Problem 1: Episode I: The Weighted Average Awakens &#8212; Quant Interview Handbook</title>
   
   
   
@@ -64,7 +64,7 @@
     <link rel="canonical" href="/QuantBook/chapters/statistics/p1.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Calculus and Linear Algebra" href="../calclinalg/calclinalg.html" />
+    <link rel="next" title="Problem 2: Episode II: Attack of the Intercepts" href="p2.html" />
     <link rel="prev" title="Statistics" href="stats.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -228,22 +228,24 @@
 <li class="toctree-l2"><a class="reference internal" href="../probex/p41.html">Problem 41: HHH vs. THH: Dawn of Flips</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../strategygames/strategy.html">Strategy Games and Puzzles</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../strategygames/strategy.html">Strategy Games and Brain Teasers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../strategygames/p1.html">Problem 1: Six Knights</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../strategygames/p2.html">Problem 2: Among Us: The Algorithmic Edition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../strategygames/p3.html">Problem 3: Game of Throws</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../strategygames/p4.html">Problem 4: The Roll-Take Conundrum</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../strategygames/p5.html">Problem 5: Ace or Bust</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../strategygames/p6.html">Problem 6: The Apple Smuggler’s Dilemma</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../brainteasers/brainteasers.html">Brain Teasers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../brainteasers/p1.html">Problem 1: 3 Horses to Rule Them All</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../brainteasers/p2.html">Problem 2: Jaws: Circular Logic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strategygames/p7.html">Problem 7: 3 Horses to Rule Them All</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strategygames/p8.html">Problem 8: Jaws: Circular Logic</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="stats.html">Statistics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem 1: Roller Coaster Ride</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem 1: Episode I: The Weighted Average Awakens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p2.html">Problem 2: Episode II: Attack of the Intercepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p3.html">Problem 3: Episode III: Revenge of the Bias Guess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p4.html">Problem 4: The Variable Menace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p5.html">Problem 5: Attack of the Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p6.html">Problem 6: Revenge of the QR</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../calclinalg/calclinalg.html">Calculus and Linear Algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -449,7 +451,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problem 1: Roller Coaster Ride</h1>
+    <h1>Problem 1: Episode I: The Weighted Average Awakens</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -463,79 +465,91 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-1-roller-coaster-ride">
-<h1>Problem 1: Roller Coaster Ride<a class="headerlink" href="#problem-1-roller-coaster-ride" title="Link to this heading">#</a></h1>
-<p>A sequence <span class="math notranslate nohighlight">\(y_1, ..., y_k\)</span> of real numbers is called zigzag if <span class="math notranslate nohighlight">\(k=1\)</span>, or if <span class="math notranslate nohighlight">\(y_2-y_1, y_3-y_2,...,y_k-y_{k-1}\)</span> are nonzero and alternate in sign. For example, <span class="math notranslate nohighlight">\(0.1, 0.4, 0.3, 0.6, 0.15\)</span> is zigzag. Let <span class="math notranslate nohighlight">\(X_1, X_2, ... , X_n\)</span> be chosen independently from the uniform distribution on <span class="math notranslate nohighlight">\([0, 1]\)</span>. Let <span class="math notranslate nohighlight">\(a(X_1, ..., X_n)\)</span> be the longest zigzag subsequence in <span class="math notranslate nohighlight">\(X_1, ..., X_n\)</span> (i.e., the largest value of <span class="math notranslate nohighlight">\(k\)</span> for which there exists an increasing sequence of integers <span class="math notranslate nohighlight">\(i_1, i_2, ... ,i_k\)</span> such that <span class="math notranslate nohighlight">\(X_{i_1} , X_{i_2} , ... , X_{i_k}\)</span> is zigzag). Find the expected value of <span class="math notranslate nohighlight">\(a(X_1, ..., X_n)\)</span> for <span class="math notranslate nohighlight">\(n\geq 2\)</span>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-1-episode-i-the-weighted-average-awakens">
+<h1>Problem 1: Episode I: The Weighted Average Awakens<a class="headerlink" href="#problem-1-episode-i-the-weighted-average-awakens" title="Link to this heading">#</a></h1>
+<p>Consider two independent OLS regressions without intercepts:</p>
+<div class="math notranslate nohighlight">
+\[
+Y_1 = \beta_1 X_1 + \varepsilon_1, \quad \text{where} \quad Y_1, X_1 \in \mathbb{R}^{M},
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+Y_2 = \beta_2 X_2 + \varepsilon_2, \quad \text{where} \quad Y_2, X_2 \in \mathbb{R}^{N}.
+\]</div>
+<p>Now consider the combined dataset formed by concatenating:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Y = \begin{bmatrix} Y_1 \\ Y_2 \end{bmatrix} \in \mathbb{R}^{M+N}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(X = \begin{bmatrix} X_1 \\ X_2 \end{bmatrix} \in \mathbb{R}^{M+N}\)</span>,</p></li>
+</ul>
+<p>and fit a third OLS model (without intercept):</p>
+<div class="math notranslate nohighlight">
+\[
+Y = \beta X + \varepsilon.
+\]</div>
+<p>Given the values of <span class="math notranslate nohighlight">\(\beta_1\)</span> and <span class="math notranslate nohighlight">\(\beta_2\)</span>, determine the possible range of values that the combined regression coefficient <span class="math notranslate nohighlight">\(\beta\)</span> can take, as a function of <span class="math notranslate nohighlight">\(\beta_1\)</span>, <span class="math notranslate nohighlight">\(\beta_2\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Click to show solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The main difficulty of the problem is simplified significantly by the following crucial observation:</p>
-<div class="tip admonition">
-<p class="admonition-title">Lemma: Zigzag characterization</p>
-<p class="sd-card-text">The longest zigzag subsequence consists of elements that are either local maxima (<em>peaks</em>), local minima (<em>troughs</em>), or the endpoints <span class="math notranslate nohighlight">\( X_1 \)</span> and <span class="math notranslate nohighlight">\( X_n \)</span>. More precisely, an optimal zigzag subsequence always includes <span class="math notranslate nohighlight">\( X_1 \)</span>, <span class="math notranslate nohighlight">\( X_n \)</span>, and exactly one point from each monotone segment between consecutive peaks and troughs.</p>
-</div>
-<div class="proof admonition" id="proof">
-<p class="sd-card-text">Proof. To see why this is true, consider an arbitrary zigzag
-subsequence. Suppose the subsequence contains two elements from the same
-strictly monotone segment between two consecutive local extrema of the
-sequence. Since the subsequence is zigzag, the sign of the difference
-between consecutive terms must alternate. However, within a strictly
-monotone segment, the differences have constant sign, and thus it is
-impossible to select more than one point without violating the zigzag
-condition.</p>
-<p class="sd-card-text">Conversely, it is always possible to select exactly one point from each
-strictly monotone segment. Specifically, if we select each local
-extremum (peaks and troughs), along with the first and last elements
-(endpoints), the subsequence is clearly zigzag. Furthermore, such a
-subsequence is maximal, as argued above. ◻</p>
-</div>
-<p class="sd-card-text"><strong>Step 2: Probabilistic analysis.</strong></p>
-<p class="sd-card-text">We now use the Lemma to compute the expected value
-<span class="math notranslate nohighlight">\(\mathbb{E}[a(X_1,\dots,X_n)]\)</span>.</p>
-<p class="sd-card-text">Define indicator random variables <span class="math notranslate nohighlight">\(Y_i\)</span>, for <span class="math notranslate nohighlight">\(2 \leq i \leq n-1\)</span>, by</p>
+<p class="sd-card-text"><strong>One-Dimensional OLS Without Intercept.</strong><br />
+Let <span class="math notranslate nohighlight">\(X \in \mathbb{R}^N\)</span> and <span class="math notranslate nohighlight">\(Y \in \mathbb{R}^N\)</span>. The ordinary least-squares estimator <span class="math notranslate nohighlight">\(\beta^*\)</span> is defined by</p>
+<div class="math notranslate nohighlight">
+\[
+\beta^* = \arg\min_{\beta \in \mathbb{R}} \|Y - \beta X\|_2^2.
+\]</div>
+<p class="sd-card-text">Expanding the objective gives</p>
+<div class="math notranslate nohighlight">
+\[
+\|Y - \beta X\|_2^2 = Y^\top Y - 2\beta X^\top Y + \beta^2 X^\top X.
+\]</div>
+<p class="sd-card-text">Differentiating with respect to <span class="math notranslate nohighlight">\(\beta\)</span> and setting the derivative to zero,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{d\beta} \left( Y^\top Y - 2\beta X^\top Y + \beta^2 X^\top X \right)
+= -2 X^\top Y + 2\beta X^\top X = 0,
+\]</div>
+<p class="sd-card-text">we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+\beta^* = \frac{X^\top Y}{X^\top X}.
+\]</div>
+<p class="sd-card-text">In the multivariate case, where <span class="math notranslate nohighlight">\(X \in \mathbb{R}^{N \times p}\)</span>, a similar calculation yields the familiar formula</p>
+<div class="math notranslate nohighlight">
+\[
+\beta^* = (X^\top X)^{-1} X^\top Y.
+\]</div>
+<hr class="docutils" />
+<p class="sd-card-text"><strong>Pooled Estimate from Two Samples.</strong><br />
+Suppose we have two disjoint datasets <span class="math notranslate nohighlight">\((X_1, Y_1)\)</span> of size <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\((X_2, Y_2)\)</span> of size <span class="math notranslate nohighlight">\(N\)</span>, each with its own one-dimensional regressor and response. Their individual OLS estimators (without intercept) are</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_1 = \frac{X_1^\top Y_1}{X_1^\top X_1},
+\qquad
+\beta_2 = \frac{X_2^\top Y_2}{X_2^\top X_2}.
+\]</div>
+<p class="sd-card-text">Form the combined dataset by concatenation:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-Y_i = 
-\begin{cases}
-1 &amp; \text{if } X_i \text{ is a peak or trough}, \\[5pt]
-0 &amp; \text{otherwise}.
-\end{cases}
+X = \begin{bmatrix} X_1 \\ X_2 \end{bmatrix} \in \mathbb{R}^{(M+N) \times 1},
+\qquad
+Y = \begin{bmatrix} Y_1 \\ Y_2 \end{bmatrix} \in \mathbb{R}^{(M+N) \times 1}.
 \end{split}\]</div>
-<p class="sd-card-text"><strong>Step 3: Computing the expectation <span class="math notranslate nohighlight">\(\mathbb{E}[Y_i]\)</span>.</strong></p>
-<p class="sd-card-text">Consider three consecutive random variables <span class="math notranslate nohighlight">\(X_{i-1}, X_i, X_{i+1}\)</span>,
-each uniformly and independently distributed on <span class="math notranslate nohighlight">\([0,1]\)</span>. There are
-<span class="math notranslate nohighlight">\(3! = 6\)</span> equally likely possible orderings of these three distinct
-points. The variable <span class="math notranslate nohighlight">\(Y_i\)</span> equals zero only if the ordering is strictly
-increasing or strictly decreasing (i.e., <span class="math notranslate nohighlight">\((X_{i-1},X_i,X_{i+1})\)</span> ordered
-as either <span class="math notranslate nohighlight">\(1&lt;2&lt;3\)</span> or <span class="math notranslate nohighlight">\(3&gt;2&gt;1\)</span>). Thus, exactly two out of these six
-equally likely permutations correspond to <span class="math notranslate nohighlight">\(Y_i=0\)</span>.</p>
-<p class="sd-card-text">Therefore,</p>
+<p class="sd-card-text">The pooled estimator is</p>
 <div class="math notranslate nohighlight">
-\[\Pr(Y_i = 0) = \frac{2}{6} = \frac{1}{3} \quad\Rightarrow\quad \Pr(Y_i = 1) = \frac{2}{3}.\]</div>
-<p class="sd-card-text">Hence, the expectation of <span class="math notranslate nohighlight">\(Y_i\)</span> is</p>
+\[
+\beta = \frac{X^\top Y}{X^\top X}
+= \frac{X_1^\top Y_1 + X_2^\top Y_2}{X_1^\top X_1 + X_2^\top X_2}
+= \frac{\beta_1 X_1^\top X_1 + \beta_2 X_2^\top X_2}{X_1^\top X_1 + X_2^\top X_2}.
+\]</div>
+<p class="sd-card-text">Because <span class="math notranslate nohighlight">\(X_1^\top X_1\)</span> and <span class="math notranslate nohighlight">\(X_2^\top X_2\)</span> are nonnegative weights, it follows that</p>
 <div class="math notranslate nohighlight">
-\[\mathbb{E}[Y_i] = 1 \cdot \frac{2}{3} + 0 \cdot \frac{1}{3} = \frac{2}{3}.\]</div>
-<p class="sd-card-text"><strong>Step 4: Calculating the expectation by linearity.</strong></p>
-<p class="sd-card-text">By the Lemma above, the length of the longest zigzag subsequence is
-given by:</p>
+\[
+\min\{\beta_1, \beta_2\} \leq \beta \leq \max\{\beta_1, \beta_2\}.
+\]</div>
+<p class="sd-card-text">Moreover, this inclusion is tight when <span class="math notranslate nohighlight">\(\beta_1 = \beta_2\)</span>. Hence</p>
 <div class="math notranslate nohighlight">
-\[a(X_1,\dots,X_n) = 2 + \sum_{i=2}^{n-1} Y_i,\]</div>
-<p class="sd-card-text">where the first and last elements (<span class="math notranslate nohighlight">\(X_1, X_n\)</span>) are always counted, and each peak
-or trough is counted exactly once.</p>
-<p class="sd-card-text">Using linearity of expectation, we get:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\mathbb{E}[a(X_1,\dots,X_n)]
-&amp;= 2 + \mathbb{E}\left[\sum_{i=2}^{n-1} Y_i\right]\\[6pt]
-&amp;= 2 + \sum_{i=2}^{n-1}\mathbb{E}[Y_i]\\[6pt]
-&amp;= 2 + \sum_{i=2}^{n-1}\frac{2}{3}\\[6pt]
-&amp;= 2 + \frac{2(n-2)}{3}\\[6pt]
-&amp;= \frac{6}{3} + \frac{2(n-2)}{3}\\[6pt]
-&amp;= \frac{2n + 2}{3}.
-\end{aligned}\end{split}\]</div>
-<p class="sd-card-text">Thus, we have the final answer:</p>
-<div class="math notranslate nohighlight">
-\[\boxed{\frac{2n+2}{3}}.\]</div>
+\[
+\boxed{ \beta \in \left[ \min(\beta_1, \beta_2), \; \max(\beta_1, \beta_2) \right] }.
+\]</div>
 </div>
 </details></section>
 
@@ -579,11 +593,11 @@ or trough is counted exactly once.</p>
       </div>
     </a>
     <a class="right-next"
-       href="../calclinalg/calclinalg.html"
+       href="p2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Calculus and Linear Algebra</p>
+        <p class="prev-next-title">Problem 2: Episode II: Attack of the Intercepts</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -1,4 +1,4 @@
-# Strategy Games and Puzzles
+# Strategy Games and Brain Teasers
 
 - [](p1.md)
 - [](p2.md)
@@ -6,3 +6,5 @@
 - [](p4.md)
 - [](p5.md)
 - [](p6.md)
+- [](p7.md)
+- [](p8.md)
